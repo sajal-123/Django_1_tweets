@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Django Tweets
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center text-white mt-4">
+    This is Our Django Tweet Demo
+</h1>
+
+<h2 class="text-white">
+    {% if form.instance.pk %}
+        Edit Tweet
+    {% else %}
+        Create Tweet
+    {% endif %}
+</h2>
+
+<div class="container mt-4">
+    <form method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-warning" type="submit">Submit</button>
+    </form>
+    <a class="btn btn-secondary mt-3" href="{% url 'tweet_list' %}">Back to Tweet List</a>
+</div>
+{% endblock %}

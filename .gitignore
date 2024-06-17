@@ -1,0 +1,23 @@
+# Django related files
+*.pyc
+__pycache__/
+*.sqlite3
+*.pyo
+*.pyd
+
+# Local development settings
+*.env
+.envrc
+/.venv/
+/.vscode/
+/.idea/
+*.pytest_cache/
+
+# Static files
+/django_tweet/staticfiles/
+
+# Media files
+/django_tweet/media/
+
+# Logs
+*.log
